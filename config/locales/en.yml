@@ -262,7 +262,7 @@ en:
     prompt: 'You are going to follow:'
   settings:
     authorized_apps: Authorized apps
-    back: Back to Mastodon
+    back: Back to Awoo.space
     edit_profile: Edit profile
     export: Data export
     import: Import
