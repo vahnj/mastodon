@@ -14,6 +14,8 @@ class Pubsubhubbub::DistributionWorker
     payload = AtomSerializer.render(AtomSerializer.new.feed(account, [stream_entry]))
 
     Subscription.where(account: account).active.select('id, callback_url').find_each do |subscription|
+      host = Addressable::URI.parse(subscription.callback_url).host
+      next if AllowDomainService.new.blocked?(host)
       Pubsubhubbub::DeliveryWorker.perform_async(subscription.id, payload)
     end
   rescue ActiveRecord::RecordNotFound

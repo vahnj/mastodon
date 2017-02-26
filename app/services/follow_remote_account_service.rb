@@ -34,14 +34,15 @@ class FollowRemoteAccountService < BaseService
 
       domain_block = DomainBlock.find_by(domain: domain)
       account = Account.new(username: confirmed_username, domain: confirmed_domain)
-      account.suspended   = true if domain_block && domain_block.suspend?
-      account.silenced    = true if domain_block && domain_block.silence?
+      account.suspended   = allow_domain_service.call(domain) == :suspend
+      account.silenced    = allow_domain_service.call(domain) == :silence
       account.private_key = nil
     else
       account = confirmed_account
     end
 
     account.last_webfingered_at = Time.now.utc
+    allow_domain_service = AllowDomainService.new
 
     account.remote_url  = data.link('http://schemas.google.com/g/2010#updates-from').href
     account.salmon_url  = data.link('salmon').href
