@@ -132,7 +132,7 @@ class OStatus::Activity::Creation < OStatus::Activity::Base
   end
 
   def save_media
-    do_not_download = DomainBlock.find_by(domain: @account.domain)&.reject_media?
+    do_not_download = AllowDomainService.reject_media?(@account.domain)
     media_attachments = []
 
     @xml.xpath('./xmlns:link[@rel="enclosure"]', xmlns: OStatus::TagManager::XMLNS).each do |link|
@@ -167,7 +167,7 @@ class OStatus::Activity::Creation < OStatus::Activity::Base
   end
 
   def save_emojis(parent)
-    do_not_download = DomainBlock.find_by(domain: parent.account.domain)&.reject_media?
+    do_not_download = AllowDomainService.reject_media?(parent.account.domain)
 
     return if do_not_download
 
