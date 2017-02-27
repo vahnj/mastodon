@@ -7,7 +7,7 @@
 # For more information, see docs/Running-Mastodon/Administration-guide.md
 #
 defaults: &defaults
-  site_title: 'Mastodon'
+  site_title: 'Awoo.space'
   site_description: ''
   site_extended_description: ''
   site_contact_username: ''
@@ -25,7 +25,7 @@ defaults: &defaults
   interactions:
     must_be_follower: false
     must_be_following: false
-  whitelist_enabled: false
+  whitelist_enabled: true
 development:
   <<: *defaults
 
