@@ -19,6 +19,11 @@
     = image_tag 'logo.png'
     = Setting.site_title
 
+  - unless @description.blank?
+    %h3= t('about.description_headline', domain: Rails.configuration.x.local_domain)
+    %p= @description.html_safe
+
+  %h3= 'What is Mastodon?'
   %p= t('about.about_mastodon').html_safe
 
   .screenshot-with-signup
