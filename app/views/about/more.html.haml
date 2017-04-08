@@ -27,6 +27,12 @@
       - unless @instance_presenter.site_extended_description.blank?
         .panel= @instance_presenter.site_extended_description.html_safe
 
+      - if DomainWhitelist.enabled?
+        %h3#whitelist= 'Who is on our federation whitelist?'
+        %ul
+          - @instance_presenter.whitelist.each do |site|
+            %li= link_to site.domain, 'https://' + site.domain, :remote => true
+
     .sidebar
       = render partial: 'contact', object: @instance_presenter
       = render 'links'

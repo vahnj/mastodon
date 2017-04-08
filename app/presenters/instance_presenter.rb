@@ -22,7 +22,15 @@ class InstancePresenter
     Rails.cache.fetch('local_status_count') { Status.local.count }
   end
 
+  def whitelist
+    Rails.cache.fetch('whitelist') { DomainWhitelist.all }
+  end
+
   def domain_count
-    Rails.cache.fetch('distinct_domain_count') { Account.distinct.count(:domain) }
+    if DomainWhitelist.enabled? 
+      whitelist.length
+    else
+      Rails.cache.fetch('distinct_domain_count') { Account.distinct.count(:domain) }
+    end
   end
 end

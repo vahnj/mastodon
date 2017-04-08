@@ -23,6 +23,12 @@
     %h3= t('about.description_headline', domain: Rails.configuration.x.local_domain)
     %p= @description.html_safe
 
+  - if DomainWhitelist.enabled?
+    %h3= 'What servers do you federate with?'
+    %p
+      We are open to federating with many servers, and this will only grow over time- you can find a full list
+      = link_to 'here.', about_more_path + '#whitelist'
+
   %h3= 'What is Mastodon?'
   %p= t('about.about_mastodon').html_safe
 
