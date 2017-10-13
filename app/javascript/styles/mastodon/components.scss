@@ -3581,6 +3581,7 @@
 }
 
 .boost-modal,
+.doodle-modal,
 .confirmation-modal,
 .report-modal,
 .actions-modal,
@@ -3609,6 +3610,10 @@
   }
 }
 
+.doodle-modal {
+  width: unset;
+}
+
 .actions-modal {
   .status {
     background: $white;
@@ -3632,6 +3637,7 @@
   }
 }
 
+.doodle-modal__action-bar,
 .boost-modal__action-bar,
 .confirmation-modal__action-bar,
 .mute-modal__action-bar,
