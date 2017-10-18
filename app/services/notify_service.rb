@@ -16,6 +16,15 @@ class NotifyService < BaseService
 
   private
 
+  def visibility
+    return @visibility if defined?(@visibility)
+    unless @activity.is_a?(Follow) || @activity.is_a?(FollowRequest)
+      status = @activity.is_a?(Status) ? @activity : @activity.status
+      @visibility = status.visibility
+    end
+    @visibility
+  end
+
   def blocked_mention?
     FeedManager.instance.filter?(:mentions, @notification.mention.status, @recipient.id)
   end
