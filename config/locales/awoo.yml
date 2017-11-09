@@ -306,8 +306,8 @@ awoo:
       body: "%{name} has requested to follow you"
       subject: 'Pending follower: %{name}'
     mention:
-      body: 'You were mentioned by %{name} in:'
-      subject: You were mentioned by %{name}
+      body: 'You were awooed at by %{name} in:'
+      subject: You were awooed at by %{name}
     reblog:
       body: 'Your awoo was joined by %{name}:'
       subject: "%{name} joined your awoo"
