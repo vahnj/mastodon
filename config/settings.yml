@@ -41,6 +41,7 @@ defaults: &defaults
     must_be_follower: false
     must_be_following: false
     must_be_following_dm: false
+    must_be_one_day_old: false
   reserved_usernames:
     - admin
     - support

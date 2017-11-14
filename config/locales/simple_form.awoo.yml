@@ -45,6 +45,7 @@ awoo:
         must_be_follower: Block notifications from non-followers
         must_be_following: Block notifications from people you don't follow
         must_be_following_dm: Block only Direct Messages from people you don't follow
+        must_be_one_day_old: Block all notifications from people less than one day old
       notification_emails:
         digest: Send digest e-mails
         favourite: Send e-mail when someone favourites your status
