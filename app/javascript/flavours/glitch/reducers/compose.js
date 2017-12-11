@@ -266,7 +266,7 @@ export default function compose(state = initialState, action) {
       map.set('privacy', privacyPreference(action.status.get('visibility'), state.get('default_privacy')));
       map.update(
         'advanced_options',
-        map => map.merge(new ImmutableMap({ do_not_federate: /👁\ufe0f?\u200b?(?:<\/p>)?$/.test(action.status.get('content')) }))
+        map => map.merge(new ImmutableMap({ do_not_federate: /🐺\ufe0f?\u200b?(?:<\/p>)?$/.test(action.status.get('content')) }))
       );
       map.set('focusDate', new Date());
       map.set('preselectDate', new Date());
