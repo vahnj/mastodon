@@ -29,7 +29,7 @@ defaults: &defaults
   system_font_ui: false
   noindex: false
   flavour: 'glitch'
-  skin: 'default'
+  skin: 'awoo'
   notification_emails:
     follow: false
     reblog: false
