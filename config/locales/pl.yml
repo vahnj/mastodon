@@ -11,6 +11,7 @@ pl:
     description_headline: Czym jest %{domain}?
     domain_count_after: instancjami
     domain_count_before: Serwer połączony z
+    domain_whitelist: Biała lista instancji
     extended_description_html: |
       <h3>Dobre miejsce na zasady użytkowania</h3>
       <p>Nie ustawiono jeszcze szczegółowego opisu</p>
@@ -433,6 +434,7 @@ pl:
     changes_saved_msg: Ustawienia zapisane!
     powered_by: uruchomione na %{link}
     save_changes: Zapisz zmiany
+    use_this: Użyj tego
     validation_errors:
       one: Coś jest wciąż nie tak! Przyjrzyj się błędowi poniżej
       other: Coś jest wciąż nie tak! Przejrzyj błędy (%{count}) poniżej
