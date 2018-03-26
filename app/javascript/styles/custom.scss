@@ -1,6 +1,3 @@
-@import 'application';
-@import 'landing_page';
-
 .button {
   &:disabled {
     background-color: #bca498;
@@ -74,32 +71,7 @@
   left: 26px;
 }
 
-.status__info {
-  padding-left: 68px;
-}
-
-.status {
-  padding-left: 0;
-}
-
-.status__action-bar {
-  padding-left: 12px;
-}
-
-.status .status__content {
-  padding: 0 12px;
-}
-
-.media-gallery.full-width {
-  margin-left: unset;
-}
-
-.status {
-  .notification__message {
-    margin: -10px 0 10px 90px !important;
-  }
-}
-
-.boost-modal__status-header .status__display-name {
-  padding-left: 78px;
+.status__content {
+  padding: 0;
+  // hmm
 }
